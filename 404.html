@@ -52,7 +52,9 @@
               message === "Not Found" ||
               !title ||
               !isUrl(title) ||
-              url.hostname === location.hostname;
+              url.hostname === location.hostname ||
+              url.href.includes(`renhex.github.io/alft`) || // current repo
+              url.href.includes(`renhex.github.io/alft-db`); // repo for post issue
 
             if (isInvalidUrl) {
               location.replace(homepage);
